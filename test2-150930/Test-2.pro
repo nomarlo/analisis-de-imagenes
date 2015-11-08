@@ -6,7 +6,7 @@
 
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 TARGET = Test-2
 TEMPLATE = app
@@ -15,11 +15,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     dlgimage.cpp \
-    mylabel.cpp
+    mylabel.cpp \
+    qcustomplot.cpp
 
 HEADERS  += mainwindow.h \
     dlgimage.h \
-    mylabel.h
+    mylabel.h \
+    qcustomplot.h
 
 FORMS    += mainwindow.ui \
     dlgimage.ui
