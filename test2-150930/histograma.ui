@@ -35,8 +35,11 @@
    <property name="text">
     <string>Red</string>
    </property>
-   <property name="autoExclusive">
+   <property name="checked">
     <bool>true</bool>
+   </property>
+   <property name="autoExclusive">
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QCheckBox" name="green">
@@ -52,7 +55,7 @@
     <string>Green</string>
    </property>
    <property name="autoExclusive">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QCheckBox" name="gray">
@@ -68,7 +71,7 @@
     <string>Gray</string>
    </property>
    <property name="autoExclusive">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QCheckBox" name="blue">
@@ -84,7 +87,7 @@
     <string>Blue</string>
    </property>
    <property name="autoExclusive">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
  </widget>
@@ -94,8 +97,79 @@
    <extends>QWidget</extends>
    <header>qcustomplot.h</header>
    <container>1</container>
+   <slots>
+    <slot>reDibujar()</slot>
+   </slots>
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>red</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>histograma</receiver>
+   <slot>ReDibujar()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>42</x>
+     <y>369</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>103</x>
+     <y>326</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>blue</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>histograma</receiver>
+   <slot>ReDibujar()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>174</x>
+     <y>367</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>239</x>
+     <y>330</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>green</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>histograma</receiver>
+   <slot>ReDibujar()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>318</x>
+     <y>365</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>364</x>
+     <y>319</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>gray</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>histograma</receiver>
+   <slot>ReDibujar()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>447</x>
+     <y>362</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>467</x>
+     <y>311</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>ReDibujar()</slot>
+ </slots>
 </ui>

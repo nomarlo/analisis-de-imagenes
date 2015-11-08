@@ -15,13 +15,17 @@ histograma::~histograma()
 
 void histograma::setDatos(QPixmap pixmap){
     QRgb pixel;
+    int red, green,blue,gray;
+
     R =new QVector<double>(256);
     G =new QVector<double>(256);
     B =new QVector<double>(256);
     Gr =new QVector<double>(256);
+    X= new QVector<double>(256);
 
-    qDebug() << R->operator [](0);
-    int red, green,blue,gray;
+
+    for (int i=0; i<256; ++i) X->operator [](i)=i;
+
     for(int x=0;x<pixmap.width();x++){
         for(int y=0;y<pixmap.height();y++){
             pixel=pixmap.toImage().pixel(x,y);
@@ -47,18 +51,10 @@ void histograma::setDatos(QPixmap pixmap){
 void histograma::Dibujar(QCustomPlot *customPlot){
     // add two new graphs and set their look:
       customPlot->addGraph();
-      customPlot->graph(0)->setPen(QPen(Qt::blue)); // line color blue for first graph
-      customPlot->graph(0)->setBrush(QBrush(QColor(0, 0, 255, 20))); // first graph will be filled with translucent blue
-     // customPlot->addGraph();
-      //customPlot->graph(1)->setPen(QPen(Qt::red)); // line color red for second graph
-      // generate some points of data (y0 for first, y1 for second graph):
-      QVector<double> x(250), y0(250), y1(250);
-      for (int i=0; i<250; ++i)
-      {
-        x[i] = i;
-        y0[i] = i; // exponentially decaying cosine
-        //y1[i] = qExp(-i/150.0);              // exponential envelope
-      }
+      customPlot->graph(0)->setPen(QPen(Qt::red)); // line color blue for first graph
+      customPlot->graph(0)->setBrush(QBrush(QColor(255, 0, 0, 20))); // first graph will be filled with translucent blue
+
+
       // configure right and top axis to show ticks but no labels:
       // (see QCPAxisRect::setupFullAxesBox for a quicker method to do this)
       customPlot->xAxis2->setVisible(true);
@@ -69,13 +65,61 @@ void histograma::Dibujar(QCustomPlot *customPlot){
       connect(customPlot->xAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->xAxis2, SLOT(setRange(QCPRange)));
       connect(customPlot->yAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->yAxis2, SLOT(setRange(QCPRange)));
       // pass data points to graphs:
-      customPlot->graph(0)->setData(x, *R);
-     // customPlot->graph(1)->setData(x, y1);
+      customPlot->graph(0)->setData(*X, *R);
       // let the ranges scale themselves so graph 0 fits perfectly in the visible area:
       customPlot->graph(0)->rescaleAxes();
-      // same thing for graph 1, but only enlarge ranges (in case graph 1 is smaller than graph 0):
-      //customPlot->graph(1)->rescaleAxes(true);
-      // Note: we could have also just called customPlot->rescaleAxes(); instead
-      // Allow user to drag axis ranges with mouse, zoom with mouse wheel and select graphs by clicking:
+
       customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
+}
+
+void histograma::ReDibujar(){
+    int i=0;
+    if(ui->red->isChecked()){
+        ui->customPlot->addGraph();
+        ui->customPlot->graph(i)->setPen(QPen(Qt::red)); // line color blue for first graph
+        ui->customPlot->graph(i)->setBrush(QBrush(QColor(255, 0, 0, 20))); // first graph will be filled with translucent blue
+        ui->customPlot->graph(i)->setData(*X, *R);
+        i++;
+     }
+
+    if(ui->green->isChecked()){
+        ui->customPlot->addGraph();
+        ui->customPlot->graph(i)->setPen(QPen(Qt::green)); // line color blue for first graph
+        ui->customPlot->graph(i)->setBrush(QBrush(QColor(0, 255, 0, 20))); // first graph will be filled with translucent blue
+        ui->customPlot->graph(i)->setData(*X, *G);
+        i++;
+     }
+
+    if(ui->blue->isChecked()){
+        ui->customPlot->addGraph();
+        ui->customPlot->graph(i)->setPen(QPen(Qt::blue)); // line color blue for first graph
+        ui->customPlot->graph(i)->setBrush(QBrush(QColor(0, 0, 255, 20))); // first graph will be filled with translucent blue
+        ui->customPlot->graph(i)->setData(*X, *B);
+        i++;
+     }
+
+    if(ui->gray->isChecked()){
+        ui->customPlot->addGraph();
+        ui->customPlot->graph(i)->setPen(QPen(Qt::black)); // line color blue for first graph
+        ui->customPlot->graph(i)->setBrush(QBrush(QColor(0, 0, 0, 20))); // first graph will be filled with translucent blue
+        ui->customPlot->graph(i)->setData(*X, *Gr);
+        i++;
+     }
+
+
+
+
+      ui->customPlot->xAxis2->setVisible(true);
+      ui->customPlot->xAxis2->setTickLabels(false);
+      ui->customPlot->yAxis2->setVisible(true);
+      ui->customPlot->yAxis2->setTickLabels(false);
+      connect(ui->customPlot->xAxis, SIGNAL(rangeChanged(QCPRange)), ui->customPlot->xAxis2, SLOT(setRange(QCPRange)));
+      connect(ui->customPlot->yAxis, SIGNAL(rangeChanged(QCPRange)), ui->customPlot->yAxis2, SLOT(setRange(QCPRange)));
+
+      ui->customPlot->graph(0)->rescaleAxes();
+      ui->customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
+
+      ui->customPlot->replot();
+
+
 }
