@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "dlgimage.h"
+#include "histograma.h"
 #include <QFileDialog>
 #include <QMdiSubWindow>
 
@@ -27,12 +28,20 @@ void MainWindow::open() {
     QString fileName = QFileDialog::getOpenFileName(this,tr("Open Image"), "/", tr("Image Files (*.png *.jpg *.bmp)"));
 
     dlgImage *img;
+    histograma *hist;
+
     img=new dlgImage(mdiArea);
+    hist=new histograma(mdiArea);
+
     img->setFileName(fileName);
     img->setStatusBar(ui->statusBar);
+    hist->setDatos();
 
     mdiArea->addSubWindow(img);
+    mdiArea->addSubWindow(hist);
+
     img->show();
+    hist->show();
 
 
 }

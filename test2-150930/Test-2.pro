@@ -16,12 +16,15 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     dlgimage.cpp \
     mylabel.cpp \
-    qcustomplot.cpp
+    qcustomplot.cpp \
+    histograma.cpp
 
 HEADERS  += mainwindow.h \
     dlgimage.h \
     mylabel.h \
-    qcustomplot.h
+    qcustomplot.h \
+    histograma.h
 
 FORMS    += mainwindow.ui \
-    dlgimage.ui
+    dlgimage.ui \
+    histograma.ui
