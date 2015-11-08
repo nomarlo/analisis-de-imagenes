@@ -53,7 +53,7 @@ void histograma::Dibujar(QCustomPlot *customPlot){
       //customPlot->graph(1)->setPen(QPen(Qt::red)); // line color red for second graph
       // generate some points of data (y0 for first, y1 for second graph):
       QVector<double> x(250), y0(250), y1(250);
-      for (int i=0; i<250; ++i)
+      for (int i=0; i<255; ++i)
       {
         x[i] = i;
         y0[i] = i; // exponentially decaying cosine

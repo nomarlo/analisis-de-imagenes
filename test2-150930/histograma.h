@@ -21,6 +21,7 @@ public:
 private:
     Ui::histograma *ui;
     void Dibujar(QCustomPlot *customPlot);
+    QVector<double> *R, *G, *B, *Gr;
 };
 
 #endif // HISTOGRAMA_H
