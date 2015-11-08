@@ -13,8 +13,21 @@ histograma::~histograma()
     delete ui;
 }
 
-void histograma::setDatos(){
+void histograma::setDatos(QPixmap pixmap){
+    QRgb pixel;
+    int red, green,blue,gray;
+    for(int x=0;x<pixmap.width();x++){
+        for(int y=0;y<pixmap.height();y++){
+            pixel=pixmap.toImage().pixel(x,y);
+
+            red=qRed(pixel);
+            green=qGreen(pixel);
+            blue=qBlue(pixel);
+        }
+    }
+    qDebug() << "C++ Style Debug Message";
     Dibujar(ui->customPlot);
+
     ui->customPlot->replot();
 }
 

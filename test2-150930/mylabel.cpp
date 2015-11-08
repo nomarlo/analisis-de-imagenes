@@ -29,6 +29,7 @@ void myLabel::mouseMoveEvent(QMouseEvent *event) {
 
     text.sprintf("X=%d, Y=%d R=%d G=%d B=%d ",x,y,red,green,blue);
 
+    
     statusBar->showMessage(text);
 }
 

@@ -17,13 +17,15 @@ void dlgImage::setStatusBar(QStatusBar *sb) {
     ui->image->setStatusBar(sb);
 }
 
-void dlgImage::setFileName(QString file) {
+QPixmap dlgImage::setFileName(QString file) {
     fileName=file;
 
     QPixmap pixmap;
     pixmap.load(fileName);
 
     ui->image->setPixmap(pixmap);
+
+    return pixmap;
 
 }
 

@@ -15,7 +15,7 @@ class histograma : public QWidget
 public:
     explicit histograma(QWidget *parent = 0);
     ~histograma();
-    void setDatos();
+    void setDatos(QPixmap pixmap);
 
 
 private:

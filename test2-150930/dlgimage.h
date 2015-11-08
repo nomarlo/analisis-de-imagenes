@@ -15,7 +15,7 @@ class dlgImage : public QDialog
 public:
     explicit dlgImage(QWidget *parent = 0);
     ~dlgImage();
-    void setFileName(QString file);
+    QPixmap setFileName(QString file);
     void saveAs(QString file);
     void setStatusBar(QStatusBar *sb);
 

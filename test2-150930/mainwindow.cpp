@@ -33,9 +33,9 @@ void MainWindow::open() {
     img=new dlgImage(mdiArea);
     hist=new histograma(mdiArea);
 
-    img->setFileName(fileName);
+    hist->setDatos(img->setFileName(fileName));
     img->setStatusBar(ui->statusBar);
-    hist->setDatos();
+
 
     mdiArea->addSubWindow(img);
     mdiArea->addSubWindow(hist);
