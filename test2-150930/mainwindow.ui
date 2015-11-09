@@ -33,7 +33,14 @@
     <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
+   <widget class="QMenu" name="menuRangos">
+    <property name="title">
+     <string>Matrices</string>
+    </property>
+    <addaction name="actionRangos"/>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuRangos"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -68,6 +75,11 @@
   <action name="actionExit">
    <property name="text">
     <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionRangos">
+   <property name="text">
+    <string>Rangos</string>
    </property>
   </action>
  </widget>

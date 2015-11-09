@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QMdiArea>
+#include "dlgimage.h"
+#include "histograma.h"
 
 namespace Ui {
 class MainWindow;
@@ -19,10 +21,12 @@ public:
 private:
     Ui::MainWindow *ui;
     QMdiArea  *mdiArea;
-
+    dlgImage *img;
+    histograma *hist;
 private slots:
     void open();
     void saveAs();
+    void rango();
 };
 
 #endif // MAINWINDOW_H

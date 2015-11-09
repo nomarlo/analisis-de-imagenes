@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "dlgimage.h"
 #include "histograma.h"
+#include "rangos.h"
 #include <QFileDialog>
 #include <QMdiSubWindow>
 
@@ -16,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->actionOpen,SIGNAL(triggered(bool)),this,SLOT(open()));
     connect(ui->actionSave_As,SIGNAL(triggered(bool)),this,SLOT(saveAs()));
+    connect(ui->actionRangos,SIGNAL(triggered(bool)),this,SLOT(rango()));
 }
 
 MainWindow::~MainWindow()
@@ -27,12 +29,12 @@ void MainWindow::open() {
 
     QString fileName = QFileDialog::getOpenFileName(this,tr("Open Image"), "/", tr("Image Files (*.png *.jpg *.bmp)"));
 
-    dlgImage *img;
-    histograma *hist;
+
+
 
     img=new dlgImage(mdiArea);
     hist=new histograma(mdiArea);
-
+   // pixmap->operator =(img->setFileName(fileName));
     hist->setDatos(img->setFileName(fileName));
     img->setStatusBar(ui->statusBar);
 
@@ -44,7 +46,10 @@ void MainWindow::open() {
     hist->show();
 
 
+
 }
+
+
 
 void MainWindow::saveAs() {
     const QMdiSubWindow *current_window=mdiArea->activeSubWindow();
@@ -61,7 +66,16 @@ void MainWindow::saveAs() {
         ui->statusBar->showMessage("No window selected");
 }
 
+void MainWindow::rango(){
+    rangos *ran;
+    ran =new rangos(mdiArea);
 
+    ran->setImagen(img,hist);
+
+    mdiArea->addSubWindow(ran);
+
+    ran->show();
+}
 
 
 

@@ -18,6 +18,8 @@ public:
     QPixmap setFileName(QString file);
     void saveAs(QString file);
     void setStatusBar(QStatusBar *sb);
+    void setImage(QPixmap pixmap );
+    const QPixmap* getPixmap();
 
 private:
     Ui::dlgImage *ui;

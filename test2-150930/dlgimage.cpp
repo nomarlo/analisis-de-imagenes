@@ -29,12 +29,24 @@ QPixmap dlgImage::setFileName(QString file) {
 
 }
 
+void dlgImage::setImage(QPixmap pixmap){
+    ui->image->setPixmap(pixmap);
+
+}
+
+
+
 void dlgImage::saveAs(QString file) {
     fileName=file;
 
     const QPixmap *pixmap=ui->image->pixmap();
 
     pixmap->save(fileName);
+}
+
+const QPixmap* dlgImage::getPixmap(){
+
+    return ui->image->pixmap();
 }
 
 
