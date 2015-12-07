@@ -18,16 +18,19 @@ SOURCES += main.cpp\
     mylabel.cpp \
     qcustomplot.cpp \
     histograma.cpp \
-    rangos.cpp
+    rangos.cpp \
+    convolucion.cpp
 
 HEADERS  += mainwindow.h \
     dlgimage.h \
     mylabel.h \
     qcustomplot.h \
     histograma.h \
-    rangos.h
+    rangos.h \
+    convolucion.h
 
 FORMS    += mainwindow.ui \
     dlgimage.ui \
     histograma.ui \
-    rangos.ui
+    rangos.ui \
+    convolucion.ui

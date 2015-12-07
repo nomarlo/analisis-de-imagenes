@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionOpen,SIGNAL(triggered(bool)),this,SLOT(open()));
     connect(ui->actionSave_As,SIGNAL(triggered(bool)),this,SLOT(saveAs()));
     connect(ui->actionRangos,SIGNAL(triggered(bool)),this,SLOT(rango()));
+    connect(ui->actionConvolucion,SIGNAL(triggered(bool)),this,SLOT(setConvolucion()));
 }
 
 MainWindow::~MainWindow()
@@ -75,6 +76,17 @@ void MainWindow::rango(){
     mdiArea->addSubWindow(ran);
 
     ran->show();
+}
+
+void MainWindow::setConvolucion(){
+
+    conv =new convolucion (mdiArea);
+    conv->setImagen(img);
+    conv->setGrid();
+
+    mdiArea->addSubWindow(conv);
+
+    conv->show();
 }
 
 

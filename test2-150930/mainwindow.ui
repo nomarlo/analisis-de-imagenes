@@ -38,6 +38,7 @@
      <string>Matrices</string>
     </property>
     <addaction name="actionRangos"/>
+    <addaction name="actionConvolucion"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuRangos"/>
@@ -80,6 +81,11 @@
   <action name="actionRangos">
    <property name="text">
     <string>Rangos</string>
+   </property>
+  </action>
+  <action name="actionConvolucion">
+   <property name="text">
+    <string>Convolucion</string>
    </property>
   </action>
  </widget>

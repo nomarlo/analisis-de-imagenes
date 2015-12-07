@@ -5,6 +5,7 @@
 #include <QMdiArea>
 #include "dlgimage.h"
 #include "histograma.h"
+#include "convolucion.h"
 
 namespace Ui {
 class MainWindow;
@@ -23,10 +24,12 @@ private:
     QMdiArea  *mdiArea;
     dlgImage *img;
     histograma *hist;
+    convolucion *conv;
 private slots:
     void open();
     void saveAs();
     void rango();
+    void setConvolucion();
 };
 
 #endif // MAINWINDOW_H
