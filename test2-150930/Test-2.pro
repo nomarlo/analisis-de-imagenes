@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     qcustomplot.cpp \
     histograma.cpp \
     rangos.cpp \
-    convolucion.cpp
+    convolucion.cpp \
+    operaciones.cpp
 
 HEADERS  += mainwindow.h \
     dlgimage.h \
@@ -27,10 +28,12 @@ HEADERS  += mainwindow.h \
     qcustomplot.h \
     histograma.h \
     rangos.h \
-    convolucion.h
+    convolucion.h \
+    operaciones.h
 
 FORMS    += mainwindow.ui \
     dlgimage.ui \
     histograma.ui \
     rangos.ui \
-    convolucion.ui
+    convolucion.ui \
+    operaciones.ui

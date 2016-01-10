@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>393</width>
+    <width>587</width>
     <height>398</height>
    </rect>
   </property>
@@ -120,6 +120,87 @@
      <height>201</height>
     </rect>
    </property>
+  </widget>
+  <widget class="QComboBox" name="alpha">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>60</y>
+     <width>91</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>sum</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>max</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>min</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>media</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>30</y>
+     <width>111</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Alpha</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>130</y>
+     <width>111</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Beta</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="beta">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>170</y>
+     <width>91</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>mul</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>sum</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>res</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>
