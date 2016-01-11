@@ -41,8 +41,15 @@
     <addaction name="actionConvolucion"/>
     <addaction name="actionOperaciones"/>
    </widget>
+   <widget class="QMenu" name="menuSegmentaci_n">
+    <property name="title">
+     <string>Segmentaciòn</string>
+    </property>
+    <addaction name="actionOtsu"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuRangos"/>
+   <addaction name="menuSegmentaci_n"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -92,6 +99,11 @@
   <action name="actionOperaciones">
    <property name="text">
     <string>Operaciones</string>
+   </property>
+  </action>
+  <action name="actionOtsu">
+   <property name="text">
+    <string>Otsu</string>
    </property>
   </action>
  </widget>

@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     histograma.cpp \
     rangos.cpp \
     convolucion.cpp \
-    operaciones.cpp
+    operaciones.cpp \
+    otsu.cpp
 
 HEADERS  += mainwindow.h \
     dlgimage.h \
@@ -29,11 +30,13 @@ HEADERS  += mainwindow.h \
     histograma.h \
     rangos.h \
     convolucion.h \
-    operaciones.h
+    operaciones.h \
+    otsu.h
 
 FORMS    += mainwindow.ui \
     dlgimage.ui \
     histograma.ui \
     rangos.ui \
     convolucion.ui \
-    operaciones.ui
+    operaciones.ui \
+    otsu.ui

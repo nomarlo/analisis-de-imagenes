@@ -7,6 +7,7 @@
 #include "histograma.h"
 #include "convolucion.h"
 #include "operaciones.h"
+#include "otsu.h"
 namespace Ui {
 class MainWindow;
 }
@@ -27,12 +28,14 @@ private:
     histograma *hist;
     convolucion *conv;
     operaciones *oper;
+    Otsu *otsuu;
 private slots:
     void open();
     void saveAs();
     void rango();
     void setConvolucion();
     void setOperaciones();
+    void setOtsu();
 };
 
 #endif // MAINWINDOW_H

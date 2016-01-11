@@ -20,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionRangos,SIGNAL(triggered(bool)),this,SLOT(rango()));
     connect(ui->actionConvolucion,SIGNAL(triggered(bool)),this,SLOT(setConvolucion()));
     connect(ui->actionOperaciones,SIGNAL(triggered(bool)),this,SLOT(setOperaciones()));
+    connect(ui->actionOtsu,SIGNAL(triggered(bool)),this,SLOT(setOtsu()));
 }
 
 MainWindow::~MainWindow()
@@ -111,6 +112,17 @@ void MainWindow::setOperaciones(){
 
     img2->show();
     oper->show();
+}
+
+void MainWindow::setOtsu(){
+
+    otsuu =new Otsu (mdiArea);
+    otsuu->setImagen(img, hist);
+    otsuu->doOtsu();
+
+    mdiArea->addSubWindow(otsuu);
+
+    otsuu->show();
 }
 
 

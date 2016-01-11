@@ -102,7 +102,6 @@ void operaciones::  doOp(){
 
         img->setImage(pixmap);
 
-        qDebug()<<"prep";
     }
     else{
         qDebug()<<"imagenes de diferentes dimensiones";

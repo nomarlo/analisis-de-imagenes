@@ -16,12 +16,12 @@ public:
     explicit histograma(QWidget *parent = 0);
     ~histograma();
     void setDatos(QPixmap pixmap);
-
+    QVector<double> *R, *G, *B, *Gr, *X;
 
 private:
     Ui::histograma *ui;
     void Dibujar(QCustomPlot *customPlot);
-    QVector<double> *R, *G, *B, *Gr, *X;
+
 
 
 

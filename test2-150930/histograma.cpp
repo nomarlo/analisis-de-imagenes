@@ -13,6 +13,8 @@ histograma::~histograma()
     delete ui;
 }
 
+
+
 void histograma::setDatos(QPixmap pixmap){
     QRgb pixel;
     int red, green,blue,gray;
