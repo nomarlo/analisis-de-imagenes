@@ -106,13 +106,14 @@ void convolucion::  doCon(){
             G=(float)alpha==3?G/n:G;
             B=(float)alpha==3?B/n:B;
 
+            /**
             R=R>255?255:R;
             G=G>255?255:G;
             B=B>255?255:B;
             R=R<0?0:R;
             G=G<0?0:G;
             B=B<0?0:B;
-
+            **/
             nVal[j]=qRgb(R,G,B);
 
         }

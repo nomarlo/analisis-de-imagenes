@@ -2,6 +2,7 @@
 #define OPERACIONES_H
 
 #include <QWidget>
+#include "dlgimage.h"
 
 namespace Ui {
 class operaciones;
@@ -13,10 +14,16 @@ class operaciones : public QWidget
 
 public:
     explicit operaciones(QWidget *parent = 0);
-    ~operaciones();
+    ~operaciones();    
+    void setImagenes(dlgImage * imagen, dlgImage * imagen2);
 
 private:
     Ui::operaciones *ui;
+    dlgImage *img;
+    dlgImage *img2;
+
+public slots:
+    void doOp();
 };
 
 #endif // OPERACIONES_H

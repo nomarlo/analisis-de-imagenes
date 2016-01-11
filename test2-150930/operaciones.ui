@@ -1,21 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author/>
- <comment/>
- <exportmacro/>
  <class>operaciones</class>
- <widget name="operaciones" class="QWidget">
+ <widget class="QWidget" name="operaciones">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>149</width>
     <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <widget class="QComboBox" name="operaciones_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>80</y>
+     <width>91</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>suma</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>resta</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>maximo</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>minimo</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>reflejado</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>complemento</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>40</y>
+     <width>47</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Operacion</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>200</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Do</string>
+   </property>
+  </widget>
  </widget>
- <pixmapfunction/>
- <connections/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>operaciones</receiver>
+   <slot>doOp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>91</x>
+     <y>210</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>111</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>doOp()</slot>
+ </slots>
 </ui>

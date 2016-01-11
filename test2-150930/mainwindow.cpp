@@ -19,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionSave_As,SIGNAL(triggered(bool)),this,SLOT(saveAs()));
     connect(ui->actionRangos,SIGNAL(triggered(bool)),this,SLOT(rango()));
     connect(ui->actionConvolucion,SIGNAL(triggered(bool)),this,SLOT(setConvolucion()));
+    connect(ui->actionOperaciones,SIGNAL(triggered(bool)),this,SLOT(setOperaciones()));
 }
 
 MainWindow::~MainWindow()
@@ -89,6 +90,28 @@ void MainWindow::setConvolucion(){
     conv->show();
 }
 
+
+void MainWindow::setOperaciones(){
+
+    QString fileName = QFileDialog::getOpenFileName(this,tr("Open Image"), "/", tr("Image Files (*.png *.jpg *.bmp)"));
+    img2=new dlgImage(mdiArea);
+    img2->setFileName(fileName);
+    img2->setStatusBar(ui->statusBar);
+
+    /**
+    const QPixmap *pixm=img->getPixmap();
+    const QPixmap *pixm2=img2->getPixmap();
+    **/
+    //qDebug()<<pixm->height()<<":"<<pixm2->height();
+    oper =new operaciones (mdiArea);
+    oper->setImagenes(img,img2);
+
+    mdiArea->addSubWindow(oper);
+    mdiArea->addSubWindow(img2);
+
+    img2->show();
+    oper->show();
+}
 
 
 

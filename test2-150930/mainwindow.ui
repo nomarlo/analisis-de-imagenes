@@ -39,6 +39,7 @@
     </property>
     <addaction name="actionRangos"/>
     <addaction name="actionConvolucion"/>
+    <addaction name="actionOperaciones"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuRangos"/>
@@ -86,6 +87,11 @@
   <action name="actionConvolucion">
    <property name="text">
     <string>Convolucion</string>
+   </property>
+  </action>
+  <action name="actionOperaciones">
+   <property name="text">
+    <string>Operaciones</string>
    </property>
   </action>
  </widget>
