@@ -24,9 +24,11 @@ private:
     dlgImage *img;
     QVector<double> *Acumulado, *Acumulado2;
     void doAcumulado();
+    void doOtsu(int t);
 
 public slots:
-    void doOtsu();
+    void setT();
+
 };
 
 #endif // OTSU_H

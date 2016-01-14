@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     rangos.cpp \
     convolucion.cpp \
     operaciones.cpp \
-    otsu.cpp
+    otsu.cpp \
+    labeling.cpp
 
 HEADERS  += mainwindow.h \
     dlgimage.h \
@@ -31,7 +32,8 @@ HEADERS  += mainwindow.h \
     rangos.h \
     convolucion.h \
     operaciones.h \
-    otsu.h
+    otsu.h \
+    labeling.h
 
 FORMS    += mainwindow.ui \
     dlgimage.ui \
@@ -39,4 +41,5 @@ FORMS    += mainwindow.ui \
     rangos.ui \
     convolucion.ui \
     operaciones.ui \
-    otsu.ui
+    otsu.ui \
+    labeling.ui

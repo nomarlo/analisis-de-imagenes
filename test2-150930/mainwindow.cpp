@@ -118,7 +118,7 @@ void MainWindow::setOtsu(){
 
     otsuu =new Otsu (mdiArea);
     otsuu->setImagen(img, hist);
-    otsuu->doOtsu();
+    //otsuu->doOtsu();
 
     mdiArea->addSubWindow(otsuu);
 
