@@ -22,6 +22,8 @@ private:
     Ui::Otsu *ui;
     histograma *hist;
     dlgImage *img;
+    QVector<double> *Acumulado, *Acumulado2;
+    void doAcumulado();
 
 public slots:
     void doOtsu();

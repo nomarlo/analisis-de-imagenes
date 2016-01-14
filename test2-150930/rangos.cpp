@@ -25,8 +25,8 @@ void rangos::setRangos(){
     const QPixmap *pixm=img->getPixmap();
     QImage imagen=pixm->toImage();
     int M[256];
-    min=ui->xmax->text().toInt();
-    max=ui->xmin->text().toInt();
+    min=ui->xmin->text().toInt();
+    max=ui->xmax->text().toInt();
 
     w= pixm->width();
     h= pixm->height();
