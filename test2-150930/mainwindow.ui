@@ -47,6 +47,7 @@
     </property>
     <addaction name="actionOtsu"/>
     <addaction name="actionEtiquetado"/>
+    <addaction name="actionTransformacion"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuRangos"/>
@@ -110,6 +111,11 @@
   <action name="actionEtiquetado">
    <property name="text">
     <string>Etiquetado</string>
+   </property>
+  </action>
+  <action name="actionTransformacion">
+   <property name="text">
+    <string>Transformacion</string>
    </property>
   </action>
  </widget>

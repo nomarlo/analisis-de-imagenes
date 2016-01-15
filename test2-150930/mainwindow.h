@@ -9,6 +9,7 @@
 #include "operaciones.h"
 #include "otsu.h"
 #include "labeling.h"
+#include "distance.h"
 namespace Ui {
 class MainWindow;
 }
@@ -31,6 +32,7 @@ private:
     operaciones *oper;
     Otsu *otsuu;
     labeling *lab;
+    distance *trans;
 
 private slots:
     void open();
@@ -40,6 +42,7 @@ private slots:
     void setOperaciones();
     void setOtsu();
     void setLabeling();
+    void setTransformacion();
 };
 
 #endif // MAINWINDOW_H

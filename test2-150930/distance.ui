@@ -1,9 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author/>
- <comment/>
- <exportmacro/>
  <class>distance</class>
- <widget name="distance" class="QWidget">
+ <widget class="QWidget" name="distance">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -15,7 +13,65 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <widget class="QComboBox" name="geometria">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>70</y>
+     <width>81</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>euclidiana</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>city block</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>infinita</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>130</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Do</string>
+   </property>
+  </widget>
  </widget>
- <pixmapfunction/>
- <connections/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>distance</receiver>
+   <slot>doTransformacion()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>217</x>
+     <y>141</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>305</x>
+     <y>152</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>doTransformacion()</slot>
+ </slots>
 </ui>

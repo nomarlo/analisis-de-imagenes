@@ -22,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionOperaciones,SIGNAL(triggered(bool)),this,SLOT(setOperaciones()));
     connect(ui->actionOtsu,SIGNAL(triggered(bool)),this,SLOT(setOtsu()));
     connect(ui->actionEtiquetado,SIGNAL(triggered(bool)),this,SLOT(setLabeling()));
+    connect(ui->actionTransformacion,SIGNAL(triggered(bool)),this,SLOT(setTransformacion()));
 }
 
 MainWindow::~MainWindow()
@@ -135,6 +136,17 @@ void MainWindow::setLabeling(){
     mdiArea->addSubWindow(lab);
 
     lab->show();
+}
+
+void MainWindow::setTransformacion(){
+
+    trans =new distance (mdiArea);
+    trans->setImagen(img);
+   // trans->doLabeling();
+
+    mdiArea->addSubWindow(trans);
+
+    trans->show();
 }
 
 
