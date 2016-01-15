@@ -21,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionConvolucion,SIGNAL(triggered(bool)),this,SLOT(setConvolucion()));
     connect(ui->actionOperaciones,SIGNAL(triggered(bool)),this,SLOT(setOperaciones()));
     connect(ui->actionOtsu,SIGNAL(triggered(bool)),this,SLOT(setOtsu()));
+    connect(ui->actionEtiquetado,SIGNAL(triggered(bool)),this,SLOT(setLabeling()));
 }
 
 MainWindow::~MainWindow()
@@ -125,6 +126,16 @@ void MainWindow::setOtsu(){
     otsuu->show();
 }
 
+void MainWindow::setLabeling(){
+
+    lab =new labeling (mdiArea);
+    lab->setImagen(img);
+   // lab->doLabeling();
+
+    mdiArea->addSubWindow(lab);
+
+    lab->show();
+}
 
 
 

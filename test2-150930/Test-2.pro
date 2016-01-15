@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     convolucion.cpp \
     operaciones.cpp \
     otsu.cpp \
-    labeling.cpp
+    labeling.cpp \
+    distance.cpp
 
 HEADERS  += mainwindow.h \
     dlgimage.h \
@@ -33,7 +34,8 @@ HEADERS  += mainwindow.h \
     convolucion.h \
     operaciones.h \
     otsu.h \
-    labeling.h
+    labeling.h \
+    distance.h
 
 FORMS    += mainwindow.ui \
     dlgimage.ui \
@@ -42,4 +44,5 @@ FORMS    += mainwindow.ui \
     convolucion.ui \
     operaciones.ui \
     otsu.ui \
-    labeling.ui
+    labeling.ui \
+    distance.ui

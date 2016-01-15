@@ -8,6 +8,7 @@
 #include "convolucion.h"
 #include "operaciones.h"
 #include "otsu.h"
+#include "labeling.h"
 namespace Ui {
 class MainWindow;
 }
@@ -29,6 +30,8 @@ private:
     convolucion *conv;
     operaciones *oper;
     Otsu *otsuu;
+    labeling *lab;
+
 private slots:
     void open();
     void saveAs();
@@ -36,6 +39,7 @@ private slots:
     void setConvolucion();
     void setOperaciones();
     void setOtsu();
+    void setLabeling();
 };
 
 #endif // MAINWINDOW_H

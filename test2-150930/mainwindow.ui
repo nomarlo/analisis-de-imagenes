@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>464</width>
+    <height>339</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>464</width>
      <height>21</height>
     </rect>
    </property>
@@ -46,6 +46,7 @@
      <string>Segmentaciòn</string>
     </property>
     <addaction name="actionOtsu"/>
+    <addaction name="actionEtiquetado"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuRangos"/>
@@ -104,6 +105,11 @@
   <action name="actionOtsu">
    <property name="text">
     <string>Otsu</string>
+   </property>
+  </action>
+  <action name="actionEtiquetado">
+   <property name="text">
+    <string>Etiquetado</string>
    </property>
   </action>
  </widget>
