@@ -42,6 +42,8 @@ void convolucion::  doCon(){
     float R,G,B;
     int alpha,beta;
     int n; //para la media
+    int cruz=ui->cruz->checkState();
+    qDebug()<<cruz;
     x=ui->columna->text().toInt()-1;
     y=ui->fila->text().toInt()-1;
     QPixmap pixmap;
@@ -54,7 +56,7 @@ void convolucion::  doCon(){
 
     for(int i=0;i<t;i++){
         for(int e=0;e<t;e++){
-           Mask[i][e]=model->index(i,e).data().toInt();
+           Mask[i][e]=model->index(i,e).data().toFloat();
         }
     }
 
@@ -72,11 +74,11 @@ void convolucion::  doCon(){
             R=G=B=0.0;
             n=0;
             for(int a=0;a<t;a++){
-                if(yp>=0&& yp<h){
+                if(yp>=0&& yp<h ){
                     xp=aux;//regresa xp a su valor original
                    // qDebug()<<xp<<yp;
                     for(int b=0;b<t;b++){
-                        if(xp>=0&& xp<w){
+                        if(xp>=0&& xp<w && (cruz==0 || (b==0 &&a==1) || (b==1 &&(a==0 || a==2) )|| (b==2 && a==1)  )){
                             if(alpha==0 || alpha==3){//suma || media
                                 //beta== 0:multiplicacion, 1:suma, 2:resta
                                 R+=(float)beta==0?(float)qRed(imagen.pixel(xp,yp))*Mask[a][b]: beta==1 ?(float) qRed(imagen.pixel(xp,yp))+Mask[a][b]:(float)qRed(imagen.pixel(xp,yp))-Mask[a][b] ;

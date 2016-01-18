@@ -25,7 +25,7 @@ void distance::doTransformacion(){
     int aux, aux2,aux3,aux4;
 
     color=0;
-    vecindad=ui->geometria->currentIndex()==2?8:4;
+    vecindad=ui->geometria->currentIndex()==1?8:4;
 
     preCargaImagen();
 
@@ -34,14 +34,14 @@ void distance::doTransformacion(){
             if(MImagen[x][y]!=color){
                 aux=aux2=aux3=aux4=999;
                 //izquierda/arriba
-                if(x-1>=0 && MImagen[x-1][y]!=color)
+                if(x-1>=0)
                     aux=MImagen[x-1][y]+1;
-                if(y-1>=0 && MImagen[x][y-1]!=color)
+                if(y-1>=0)
                     aux2=MImagen[x][y-1]+1;
                 if (vecindad==8){
-                    if(x-1>=0 && y-1>=0 && MImagen[x-1][y-1]!=color)
+                    if(x-1>=0 && y-1>=0 )
                         aux3=MImagen[x-1][y-1]+1;
-                    if(x+1<=wi && y-1>=0   && MImagen[x+1][y-1]!=color)
+                    if(x+1<=wi && y-1>=0 )
                         aux4=MImagen[x+1][y-1]+1;
 
                 }
@@ -57,14 +57,14 @@ void distance::doTransformacion(){
             if(MImagen[x][y]!=color){
                 aux=aux2=aux3=aux4=999;
                 //derecha/abajo
-                if(x+1<wi && MImagen[x+1][y]!=color)
+                if(x+1<wi)
                    aux=MImagen[x+1][y]+1;
-                if(y+1<h && MImagen[x][y+1]!=color )
+                if(y+1<h)
                    aux2=MImagen[x][y+1]+1;
                 if (vecindad==8){
-                    if(x-1<=0 && y+1<h && MImagen[x-1][y+1]!=color)
+                    if(x-1<=0 && y+1<h )
                         aux3=MImagen[x-1][y+1]+1;
-                    if(x+1<wi && y+1<h && MImagen[x+1][y+1]!=color )
+                    if(x+1<wi && y+1<h )
                         aux4=MImagen[x+1][y+1]+1;
 
                 }

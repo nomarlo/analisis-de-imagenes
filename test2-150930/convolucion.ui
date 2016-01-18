@@ -202,6 +202,19 @@
     </property>
    </item>
   </widget>
+  <widget class="QCheckBox" name="cruz">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>260</y>
+     <width>70</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cruz</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections>
