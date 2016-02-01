@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionOtsu,SIGNAL(triggered(bool)),this,SLOT(setOtsu()));
     connect(ui->actionEtiquetado,SIGNAL(triggered(bool)),this,SLOT(setLabeling()));
     connect(ui->actionTransformacion,SIGNAL(triggered(bool)),this,SLOT(setTransformacion()));
+    connect(ui->actionHu,SIGNAL(triggered(bool)),this,SLOT(setReconocimiento()));
 }
 
 MainWindow::~MainWindow()
@@ -147,6 +148,13 @@ void MainWindow::setTransformacion(){
     mdiArea->addSubWindow(trans);
 
     trans->show();
+}
+
+void MainWindow::setReconocimiento(){
+
+    reco =new reconocimiento ();
+    reco->setImagen(img);
+    reco->doReconocimiento();
 }
 
 

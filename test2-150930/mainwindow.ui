@@ -49,9 +49,16 @@
     <addaction name="actionEtiquetado"/>
     <addaction name="actionTransformacion"/>
    </widget>
+   <widget class="QMenu" name="menuReconocimiento">
+    <property name="title">
+     <string>Reconocimiento</string>
+    </property>
+    <addaction name="actionHu"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuRangos"/>
    <addaction name="menuSegmentaci_n"/>
+   <addaction name="menuReconocimiento"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -116,6 +123,11 @@
   <action name="actionTransformacion">
    <property name="text">
     <string>Transformacion</string>
+   </property>
+  </action>
+  <action name="actionHu">
+   <property name="text">
+    <string>Hu</string>
    </property>
   </action>
  </widget>

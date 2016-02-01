@@ -10,6 +10,7 @@
 #include "otsu.h"
 #include "labeling.h"
 #include "distance.h"
+#include "reconocimiento.h"
 namespace Ui {
 class MainWindow;
 }
@@ -33,6 +34,7 @@ private:
     Otsu *otsuu;
     labeling *lab;
     distance *trans;
+    reconocimiento *reco;
 
 private slots:
     void open();
@@ -43,6 +45,7 @@ private slots:
     void setOtsu();
     void setLabeling();
     void setTransformacion();
+    void setReconocimiento();
 };
 
 #endif // MAINWINDOW_H

@@ -23,7 +23,9 @@ SOURCES += main.cpp\
     operaciones.cpp \
     otsu.cpp \
     labeling.cpp \
-    distance.cpp
+    distance.cpp \
+    hu.cpp \
+    reconocimiento.cpp
 
 HEADERS  += mainwindow.h \
     dlgimage.h \
@@ -35,7 +37,9 @@ HEADERS  += mainwindow.h \
     operaciones.h \
     otsu.h \
     labeling.h \
-    distance.h
+    distance.h \
+    hu.h \
+    reconocimiento.h
 
 FORMS    += mainwindow.ui \
     dlgimage.ui \

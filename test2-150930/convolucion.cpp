@@ -78,7 +78,7 @@ void convolucion::  doCon(){
                     xp=aux;//regresa xp a su valor original
                    // qDebug()<<xp<<yp;
                     for(int b=0;b<t;b++){
-                        if(xp>=0&& xp<w && (cruz==0 || (b==0 &&a==1) || (b==1 &&(a==0 || a==2) )|| (b==2 && a==1)  )){
+                        if(xp>=0&& xp<w && (cruz==0 || ( (b==0 &&a==1) || (b==1 &&(a==0 || a==2) )|| (b==2 && a==1) )  )){
                             if(alpha==0 || alpha==3){//suma || media
                                 //beta== 0:multiplicacion, 1:suma, 2:resta
                                 R+=(float)beta==0?(float)qRed(imagen.pixel(xp,yp))*Mask[a][b]: beta==1 ?(float) qRed(imagen.pixel(xp,yp))+Mask[a][b]:(float)qRed(imagen.pixel(xp,yp))-Mask[a][b] ;
@@ -108,14 +108,14 @@ void convolucion::  doCon(){
             G=(float)alpha==3?G/n:G;
             B=(float)alpha==3?B/n:B;
 
-            /**
+            //**
             R=R>255?255:R;
             G=G>255?255:G;
             B=B>255?255:B;
             R=R<0?0:R;
             G=G<0?0:G;
             B=B<0?0:B;
-            **/
+            /**/
             nVal[j]=qRgb(R,G,B);
 
         }
